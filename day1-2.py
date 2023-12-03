@@ -6,7 +6,7 @@ lines = utils.load_lines("day1.txt")
 print(lines)
 
 NUMBERS = [
-    "NOTTHISONE",
+    "zero",
     "one",
     "two",
     "three",
@@ -21,7 +21,7 @@ NUMBERS = [
 def find_numbers(line: str) -> str:
     first_index = len(line)
     first_number = -1
-    for i in range(len(NUMBERS)):
+    for i in range(1,len(NUMBERS)):
         idx = line.find(NUMBERS[i])
         if idx != -1 and idx < first_index:
             first_number = i
@@ -35,7 +35,7 @@ def find_numbers(line: str) -> str:
 def find_numbers_reversed(line:str) -> str:
     last_index = -1
     last_number = -1
-    for i in range(len(NUMBERS)):
+    for i in range(1,len(NUMBERS)):
         idx = line.rfind(NUMBERS[i])
         if idx != -1 and idx > last_index:
             last_number = i
